@@ -1,0 +1,25 @@
+@mixin dimensions
+	$width: 500px
+	$height: 200px
+	width: $width
+	height: $height
+	position: absolute
+
+	.media, li
+		width: $width
+		height: $height
+		position: absolute
+
+
+#mediaBox
+	background: gray
+	overflow: hidden
+	@include dimensions
+	.medias
+		list-style: none
+		
+		li
+			display: none
+		li.hidden
+			top: -200px
+			

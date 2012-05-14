@@ -1,0 +1,16 @@
+#mediaBox {
+  background: gray;
+  overflow: hidden;
+  width: 500px;
+  height: 200px;
+  position: absolute; }
+  #mediaBox .media, #mediaBox li {
+    width: 500px;
+    height: 200px;
+    position: absolute; }
+  #mediaBox .medias {
+    list-style: none; }
+    #mediaBox .medias li {
+      display: none; }
+    #mediaBox .medias li.hidden {
+      top: -200px; }

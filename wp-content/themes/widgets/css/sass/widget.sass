@@ -1,0 +1,252 @@
+/*
+ * 
+ * Theme Name: widgets
+ * Theme URI: http://salveweb/widgets
+ * Description: front-end widgets
+ * Author: ken210.com
+ * Version: 1.0
+ * License: MIT
+ * Tags: green, purple, white
+ * 
+ */
+
+@import url("http://fonts.googleapis.com/css?family=Share:400,700,400italic,700italic")
+
+// colors
+$white: #fff
+$darkGray: #444
+$black: #000
+$lightGreen: #c9dcc6
+$green: #80c575
+$darkGreen: #285d20
+$lightPurple: #9d71b1
+$purple: #6b2287
+$darkPurple: #3a0d4c
+$grayPurple: #544256
+
+// sizes
+$topBarHeight: 48px
+$topBarBorder: 12px
+$sidebarWidth: 196px
+
+body
+	font-family: "Share", Helvetica, Arial, sans-serif
+	background: url("img/tile_body.png") repeat
+	
+.content
+	position: relative
+
+#header, #torso
+	background: url("img/tile_container.png") repeat-y
+	
+#torso, #footer
+	padding: 12px 34px
+	
+.topBar
+	height: $topBarHeight
+	border-top: $topBarBorder solid $darkPurple
+	background-color: $green
+	.newWidget, select
+		position: absolute
+	.newWidget
+		left: 22px
+		top: 14px
+		font-size: 18px
+		color: $white
+		display: block
+		background: url("img/sprite_bullets.png") no-repeat left 6px
+		padding-left: 15px
+	select
+		top: 15px
+		right: 14px
+	
+#slimHeader
+	@extend .topBar
+	position: fixed
+	width: 100%
+	top: -$topBarHeight - $topBarBorder
+	z-index: 9
+	&.show
+		top: 0
+	.wrapper
+		width: 960px
+		margin: 0 auto
+		position: relative
+
+#header
+	padding: 0 22px
+	.content
+		background: url("img/bg_header.png") no-repeat
+		height: 300px
+		h1
+			color: $white
+			width: 174px
+			height: 174px
+			background: $darkPurple url("img/bg_h1.png") no-repeat center 60px
+			border-radius: 87px
+			position: absolute
+			right: 63px
+			top: 63px
+	nav
+		@extend .topBar
+		position: relative
+		
+
+#torso
+	aside
+		width: $sidebarWidth
+		float: left
+		background: $white
+		li
+			margin: 5px 10px
+			margin-right: 0
+			background-image: url("img/sprite_bullets.png")
+			background-repeat: no-repeat
+			padding-left: 10px
+			font-size: 16px
+			&:nth-child(4n+1)
+				background-position: left -42px
+				a:hover
+					background-color: $lightGreen
+			&:nth-child(4n+2)
+				background-position: left -92px
+				a:hover
+					background-color: $purple
+			&:nth-child(4n+3)
+				background-position: left -142px
+				a:hover
+					background-color: $green
+			&:nth-child(4n+4)
+				background-position: left -192px
+				a:hover
+					background-color: $lightPurple
+			a
+				color: $darkPurple
+				display: block
+				&:hover
+					color: $white
+	>.content
+		background-image: linear-gradient(left , $grayPurple $sidebarWidth, $white 137px)
+		background-image: -o-linear-gradient(left , $grayPurple $sidebarWidth, $white 137px)
+		background-image: -moz-linear-gradient(left , $grayPurple $sidebarWidth, $white 137px)
+		background-image: -webkit-linear-gradient(left , $grayPurple $sidebarWidth, $white 137px)
+	.main
+		float: right
+		width: 728px
+		.widget
+			background: $lightGreen
+			margin-top: 12px
+			&:first-child
+				margin-top: 0
+			.content
+				padding: 18px 24px
+				h3
+					color: $white
+					font-size: 36px
+				h4
+					color: $darkGray
+					font-size: 22px
+				p, li
+					color: $darkGray
+					font-size: 13px
+					margin: 1em 0
+				a
+					color: $darkGreen
+					&:visited
+						color: $darkGreen
+					&:hover
+						color: $lightPurple
+					&.post-edit-link
+						position: absolute
+						top: 0
+						right: 0
+						font-size: 12px
+						display: block
+						width: 60px
+						background: $green
+						color: white
+						text-align: center
+						border: 0
+							left: 2px $darkPurple
+							bottom: 1px $purple
+							style: solid
+			footer
+				height: 36px
+				position: relative
+				.demo
+					position: absolute
+					left: 24px
+					top 10px
+					font-size: 17px
+					color: $black
+				.externals
+					position: absolute
+					height: 36px
+					right: 0
+					top: 0
+					background: url("img/bg_widget_footer.png") no-repeat left top
+					padding-left: 36px
+					li
+						display: inline-block
+						padding: 6px 0
+						a
+							display: block
+							height: 20px
+							background-image: url("img/sprite_widget_footer.png")
+							padding-left: 31px
+							margin-right: 12px
+							color: $black
+							font-size: 12px
+							padding-top: 4px
+							&.site
+								background-position: 7px top
+							&.github
+								background-position: -50px top
+							&.googleCode
+								background-position: -120px top
+							&.jsfiddle
+								background-position: -221px top
+							&.jsperf
+								background-position: -298px top
+		
+
+#footer
+	background: url("img/bg_footer.png") no-repeat
+	height: 51px
+	padding-top: 17px
+	li
+		display: inline-block
+		margin: 0 12px
+	a
+		height: 32px
+		background-image: url("img/sprite_footer.png")
+		opacity: .5
+		&.html5
+			background-position: left top
+			width: 23px
+		&.wp
+			background-position: -47px top
+			width: 22px
+		&.cs
+			background-position: -93px top
+			width: 78px
+		&.sass
+			background-position: -195px top
+			width: 46px
+		&.salve
+			background-position: right top
+			width: 58px
+		&:hover
+			opacity: 1
+
+#container
+	width: 1004px
+	margin: 0 auto
+	
+body
+	.syntaxhighlighter
+		code, .gutter
+			font-size: 12px !important
+	.code
+		.container
+			padding: 3px 7px 6px !important

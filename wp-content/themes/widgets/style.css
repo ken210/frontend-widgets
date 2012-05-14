@@ -1,0 +1,12 @@
+/*
+Theme Name: widgets
+Theme URI: http://salveweb/widgets
+Description: front-end widgets
+Author: ken210.com
+Version: 1.0
+License: MIT
+Tags: green, purple, white
+*/
+
+@import url('css/reset.css');
+@import url('css/widget.css');
